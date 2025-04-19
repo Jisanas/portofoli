@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jisana S | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<!-- Font Awesome for Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+<!-- Add CSS for styling -->
+<style>
+  body {
+    margin: 0;
+    font-family: sans-serif;
+  }
+
+  .navbar {
+    position: fixed;
+    width: 100%;
+    height: 80px;
+    background-color: #0a192f;
+    color: #e2e8f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    z-index: 999;
+  }
+
+  .navbar h1 {
+    font-style: italic;
+    font-weight: 300;
+    font-size: 1.5rem;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav-links a {
+    margin: 0 1rem;
+    text-transform: capitalize;
+    text-decoration: none;
+    color: #e2e8f0;
+  }
+
+  .nav-links a:hover {
+    color: #06b6d4;
+  }
+
+  .hamburger {
+    display: block;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+  .mobile-menu {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #0a192f;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    padding-top: 100px;
+  }
+
+  .mobile-menu a {
+    display: block;
+    padding: 1rem;
+    font-size: 2rem;
+    color: #e2e8f0;
+    text-decoration: none;
+  }
+
+  .mobile-menu a:hover {
+    color: #06b6d4;
+  }
+
+  .social-icons {
+    position: fixed;
+    top: 35%;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .social-icons li {
+    width: 160px;
+    height: 56px;
+    margin-left: -100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+    padding: 0 1rem;
+    color: white;
+  }
+
+  .social-icons li:hover {
+    margin-left: -10px;
+  }
+
+  .instagram { background-color: #e1306c; }
+  .github { background-color: #333; }
+  .email { background-color: #6fc2b0; }
+
+  @media (min-width: 768px) {
+    .nav-links {
+      display: flex;
+    }
+    .hamburger,
+    .mobile-menu {
+      display: none;
+    }
+  }
+</style>
+
+
+  </head>
+  <body class="bg-[#0a192f] text-gray-300">
+    <div class="navbar">
+      <h1>Jisana S</h1>
+      <div class="nav-links">
+        <a href="#home">home</a>
+        <a href="#about">about</a>
+        <a href="#skills">skills</a>
+        <a href="#experience">experience</a>
+        <a href="#work">work</a>
+        <a href="#contact">contact</a>
+      </div>
+      <div class="hamburger" onclick="toggleMenu()">
+        <i id="menu-icon" class="fas fa-bars"></i>
+      </div>
+    </div>
+    
+    <div id="mobileMenu" class="mobile-menu">
+      <a href="#home" onclick="toggleMenu()">home</a>
+      <a href="#about" onclick="toggleMenu()">about</a>
+      <a href="#skills" onclick="toggleMenu()">skills</a>
+      <a href="#experience" onclick="toggleMenu()">experience</a>
+      <a href="#work" onclick="toggleMenu()">work</a>
+      <a href="#contact" onclick="toggleMenu()">contact</a>
+    </div>
+    
+    <ul class="social-icons">
+      <li class="instagram">
+        <a href="https://instagram.com/itsmijisanazz" target="_blank" style="width: 100%; display: flex; justify-content: space-between; align-items: center;">
+          Instagram <i class="fab fa-instagram fa-lg"></i>
+        </a>
+      </li>
+      <li class="github">
+        <a href="https://github.com/Jisanas" target="_blank" style="width: 100%; display: flex; justify-content: space-between; align-items: center;">
+          GitHub <i class="fab fa-github fa-lg"></i>
+        </a>
+      </li>
+      <li class="email">
+        <a href="mailto:jisana532008@gmail.com" style="width: 100%; display: flex; justify-content: space-between; align-items: center;">
+          Email <i class="fas fa-envelope fa-lg"></i>
+        </a>
+      </li>
+    </ul>
+    
+    <script>
+      function toggleMenu() {
+        const menu = document.getElementById('mobileMenu');
+        const icon = document.getElementById('menu-icon');
+        if (menu.style.display === 'block') {
+          menu.style.display = 'none';
+          icon.classList.remove('fa-times');
+          icon.classList.add('fa-bars');
+        } else {
+          menu.style.display = 'block';
+          icon.classList.remove('fa-bars');
+          icon.classList.add('fa-times');
+        }
+      }
+    </script>
+    
+
+    <!-- Home Section -->
+    <section id="home" class="min-h-screen flex flex-col md:flex-row items-center justify-center px-6">
+      <div class="text-center md:text-left">
+        <h1 class="text-5xl font-bold mb-4">Hi, I'm <span class="text-cyan-400">Jisana S</span></h1>
+        <p class="text-gray-400 text-lg max-w-md">Frontend & Backend Developer passionate about creating beautiful and functional websites.</p>
+      </div>
+      <div class="mt-8 md:mt-0 md:ml-12">
+        <img src="myimage.png" alt="Profile" class="w-60 h-60 rounded-full border-4 border-white shadow-lg object-cover" />
+      </div>
+    </section>
+
+  </h2>
+  
+  <div style="max-width: 900px; margin: 2rem auto; padding: 30px; border-radius: 10px; box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15); background-color:#112240;">
+
+      <h2 style="font-size: 2.5rem; font-weight: bold; border-bottom: 4px solid #06b6d4; display: inline-block; margin-bottom: 1.5rem;">
+        ABOUT ME
+      </h2>
+      <p style="font-size: 1.15rem; margin-bottom: 1.2rem; line-height: 1.7;">
+        Hi, I’m <strong>Jisana S</strong>, a frontend and backend developer passionate about building accessible, pixel-perfect web experiences. 
+        I specialize in creating intuitive and responsive user interfaces using <strong>HTML</strong>, <strong>CSS</strong>, <strong>JavaScript</strong>, and <strong>React</strong>.
+      </p>
+      <p style="font-size: 1.15rem; margin-bottom: 1.2rem; line-height: 1.7;">
+        I’m currently pursuing <strong>+2 Computer Science at CPHSS Kuttikadu</strong>. My journey began in 10th standard, experimenting with 
+        basic HTML and CSS. Over time, I’ve developed a strong interest in frontend development and continuously work on improving my skills through practical projects.
+      </p>
+      <p style="font-size: 1.15rem; margin-bottom: 1.2rem; line-height: 1.7;">
+        When I’m not working on UIs, I love diving into <strong>mobile development with React Native</strong> and taking on new challenges to push my limits. 
+        I'm always eager to learn, create, and contribute.
+      </p>
+    </div>
+    
+   
+    
+    <!-- Skills Section -->
+<section style="background-color: #0a192f; color: #ccc; padding: 4rem 1rem;">
+  <div style="max-width: 1000px; margin: auto; text-align: center;">
+    <h2 style="font-size: 2.5rem; font-weight: bold; border-bottom: 4px solid #06b6d4; display: inline-block; margin-bottom: 1rem;">
+      Skills
+    </h2>
+    <p style="font-size: 1.1rem; margin-bottom: 2rem;">
+      I enjoy diving into and learning new things. Here's a list of technologies I've worked with:
+    </p>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 1.5rem;">
+      <div style="background: #112240; padding: 1rem; border-radius: 8px;">HTML</div>
+      <div style="background: #112240; padding: 1rem; border-radius: 8px;">CSS</div>
+      <div style="background: #112240; padding: 1rem; border-radius: 8px;">JAVASCRIPT</div>
+      <div style="background: #112240; padding: 1rem; border-radius: 8px;">REACT</div>
+      <div style="background: #112240; padding: 1rem; border-radius: 8px;">PYTHON</div>
+      <div style="background: #112240; padding: 1rem; border-radius: 8px;">NODE JS</div>
+       <div style="background: #112240; padding: 1rem; border-radius: 8px;">Django</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Experience Section -->
+<section style="background-color: #0a192f; color: #ccc; padding: 4rem 1rem;">
+  <div style="max-width: 1000px; margin: auto; text-align: center;">
+    <h2 style="font-size: 2.5rem; font-weight: bold; border-bottom: 4px solid #06b6d4; display: inline-block; margin-bottom: 1rem;">
+      Experience
+    </h2>
+    <p style="font-size: 1.1rem; margin-bottom: 2rem;">
+      Here are some of the experiences and projects I've worked on.
+    </p>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+      <div style="background: #112240; padding: 1.5rem; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.5); transition: transform 0.3s;">
+        <h3 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 0.5rem;">Emergency Doctor Availability Tracker</h3>
+        <p style="font-size: 0.95rem;">
+          A web application to track the availability of doctors in case of emergencies. Built with React and Firebase.
+        </p>
+      </div>
+      <div style="background: #112240; padding: 1.5rem; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.5); transition: transform 0.3s;">
+        <h3 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 0.5rem;">Portfolio Website</h3>
+        <p style="font-size: 0.95rem;">
+          UPCOMING...
+        </p>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+<div style="max-width: 900px; margin: 2rem auto; padding: 30px; border-radius: 10px; box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15); background-color: #112240;">
+  <h2 style="font-size: 2.5rem; font-weight: bold; border-bottom: 4px solid #06b6d4; display: inline-block; margin-bottom: 1.5rem;">
+    MY EXPERIENCE WITH STEYP
+  </h2>
+  <p style="font-size: 1.15rem; margin-bottom: 1.2rem; line-height: 1.7;">
+    Steyp’s project-based learning and industry-focused curriculum stood out to me as a great opportunity to sharpen my skills. 
+    While I was initially interested in coding, I found myself eager to understand more about the program itself—its origin, 
+    how it evolved, and why it was designed in such a way. As I delved deeper, I realized how valuable it was to learn beyond just coding. 
+    The program helped me develop key skills in communication, presentation, and teamwork through group projects and 
+    delivering presentations to peers and mentors.
+  </p>
+  <p style="font-size: 1.15rem; margin-bottom: 1.2rem; line-height: 1.7;">
+    <strong>How Steyp Shaped Me</strong><br>
+    The program transformed me from a theoretical learner into a practical developer. Today, I approach challenges with resilience, 
+    equipped with a toolkit of modern technologies and the ability to deliver scalable solutions—thanks to Steyp’s rigorous training.
+  </p>
+  <p style="font-size: 1.15rem; margin-bottom: 1.2rem; line-height: 1.7;">
+    <strong>Highlight:</strong> One memorable experience was at Kadakkal Village Park, where a RoboXplorers event took place. I had the opportunity 
+    to lead a session on Artificial Intelligence and Robotics. This was my first offline class presentation, and it not only boosted my confidence 
+    but also enhanced my presentation skills. It was an invaluable experience, and I am grateful to Steyp and Kadakkal Village Park for providing this opportunity.
+  </p>
+</div>
+
+
+
+    <div style="max-width: 1100px; margin: 2rem auto; padding: 30px;">
+      <h2 style="font-size: 2.5rem; font-weight: bold; border-bottom: 4px solid #06b6d4; display: inline-block; margin-bottom: 1rem;">
+        WORK
+      </h2>
+      <p style="font-size: 1.4rem; margin-bottom: 2rem;">Check out some of my most recent work</p>
+    
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+         <!-- Hospital Tracker Card -->
+    <div style="background-color: #112240; border-radius: 10px; box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15); padding: 20px; text-align: center;">
+      <h3 style="font-size: 1.3rem; font-weight: bold; margin-bottom: 10px;">Hospital Tracker App</h3>
+      <p style="font-size: 1rem; margin-bottom: 15px;">
+        Real-time availability of doctors and hospitals during emergencies.
+      </p>
+      <div>
+        <a href="https://example.com/demo" target="_blank" style="text-decoration: none;">
+          <button style="padding: 8px 14px; margin: 5px; background-color: #06b6d4; color: #fff; border: none; border-radius: 5px; font-weight: bold; cursor: pointer;">
+            Demo
+          </button>
+        </a>
+        <a href="https://github.com/Jisanas/hospital-tracker" target="_blank" style="text-decoration: none;">
+          <button style="padding: 8px 14px; margin: 5px; background-color: #06b6d4; color: #fff; border: none; border-radius: 5px; font-weight: bold; cursor: pointer;">
+            Code
+          </button>
+        </a>
+      </div>
+    </div>
+
+        <!-- Placeholder Cards -->
+        <div style="background-color: #112240; border-radius: 10px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); padding: 20px; text-align: center;">
+          <h3 style="font-size: 1.2rem; color: #fff;">Coming Soon</h3>
+        </div>
+        <div style="background-color: #112240; border-radius: 10px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); padding: 20px; text-align: center;">
+          <h3 style="font-size: 1.2rem; color: #ffffff;">Coming Soon</h3>
+        </div>
+        <div style="background-color: #112240; border-radius: 10px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); padding: 20px; text-align: center;">
+          <h3 style="font-size: 1.2rem; color: #fff;">Coming Soon</h3>
+        </div>
+        <div style="background-color: #112240; border-radius: 10px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); padding: 20px; text-align: center;">
+          <h3 style="font-size: 1.2rem; color: #fff;">Coming Soon</h3>
+        </div>
+        <div style="background-color: #112240; border-radius: 10px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); padding: 20px; text-align: center;">
+          <h3 style="font-size: 1.2rem; color: #fff;">Coming Soon</h3>
+        </div>
+      </div>
+    </div>
+    
+    <div style="width: 100%; background-color: #0a192f; color: #e2e8f0; padding: 4rem 1rem; text-align: center;">
+      <h2 style="font-size: 2.5rem; font-weight: bold; border-bottom: 4px solid #06b6d4; display: inline-block; margin-bottom: 1rem;">
+        Contact
+      </h2>
+      <p style="font-size: 1.2rem; margin-bottom: 2rem;">
+        Feel free to reach out or connect with me!
+      </p>
+    
+      <div style="display: flex; justify-content: center; gap: 2rem; font-size: 2rem; margin-top: 2rem;">
+        <a
+          href="https://instagram.com/itsmijisanazz"
+          target="_blank"
+          rel="noopener noreferrer"
+          style="color: #e2e8f0; transition: color 0.3s ease; text-decoration: none;"
+          onmouseover="this.style.color='#06b6d4'"
+          onmouseout="this.style.color='#e2e8f0'"
+        >
+          <i class="fab fa-instagram"></i>
+        </a>
+    
+        <a
+          href="https://github.com/Jisanas"
+          target="_blank"
+          rel="noopener noreferrer"
+          style="color: #e2e8f0; transition: color 0.3s ease; text-decoration: none;"
+          onmouseover="this.style.color='#06b6d4'"
+          onmouseout="this.style.color='#e2e8f0'"
+        >
+          <i class="fab fa-github"></i>
+        </a>
+    
+        <a
+          href="mailto:jisana532008@gmaiol.com"
+          style="color: #e2e8f0; transition: color 0.3s ease; text-decoration: none;"
+          onmouseover="this.style.color='#06b6d4'"
+          onmouseout="this.style.color='#e2e8f0'"
+        >
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+    </div>
+    
+
+  </body>
+</html>
